@@ -23,6 +23,7 @@ class MyAlarmReceiver : BroadcastReceiver() {
         const val NOTIFICATION_ID = 5
     }
 
+
     override fun onReceive(context: Context, intent: Intent?) {
         val title = intent?.getStringExtra("title") ?: "Recordatorio"
         val message = intent?.getStringExtra("message") ?: "Tienes tareas pendientes."
