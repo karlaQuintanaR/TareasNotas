@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     // Nota: El plugin KSP tiene una versión más nueva disponible. La mantenemos aquí
     // pero considera actualizarla a "2.1.0-1.0.29" como sugiere la advertencia.
-    id("com.google.devtools.ksp") version "1.9.20-1.0.14"
+    id("com.google.devtools.ksp") version "2.1.0-1.0.29"
 }
 
 android {
@@ -61,7 +61,6 @@ android {
 }
 
 dependencies {
-    // CORRECCIÓN: Se usa 'val' en Kotlin Script (.kts) en lugar de 'def' (Groovy).
     val roomVersion = "2.6.1"
 
     // Compose BOM (Bill of Materials)

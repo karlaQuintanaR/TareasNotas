@@ -10,6 +10,11 @@ import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 
+/**
+ * Entidad de la base de datos que representa una nota.
+ * Se asume que se añadirán 'createdAt' y 'dueAt' en un futuro para el ordenamiento,
+ * ya que los campos redundantes de fecha/hora se han evitado/quitado.
+ */
 @Entity(tableName = "notes")
 data class Note(
     @PrimaryKey(autoGenerate = true)
@@ -32,6 +37,6 @@ interface NoteDao {
     suspend fun delete(note: Note)
 
     @Query("SELECT * FROM notes WHERE id = :id")
-    fun getNoteById(id: Int): Flow<Note?>  // Aquí obtenemos la nota junto con las URIs multimedia
+    fun getNoteById(id: Int): Flow<Note?>  // Obtenemos la nota por ID
 
 }
