@@ -21,7 +21,6 @@
         android:name="android.hardware.camera"
         android:required="false" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
@@ -39,7 +38,7 @@
         <!-- Configuración del FileProvider -->
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.inventory.fileprovider"
+            android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -49,7 +48,8 @@
 
         <receiver
             android:name=".Alarma.MyAlarmReceiver"
-            android:exported="true" />
+            android:exported="false" />
+
 
 
         <activity
