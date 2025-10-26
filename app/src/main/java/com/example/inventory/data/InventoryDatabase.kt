@@ -11,7 +11,7 @@ import com.example.inventory.ui.item.Converters
 
 @Database(entities = [Note::class], version = 3, exportSchema = false)  // Aumenta la versión a 3
 @TypeConverters(Converters::class) // Registrar los TypeConverters
-abstract class InventoryDatabase : RoomDatabase() {
+abstract class          InventoryDatabase : RoomDatabase() {
     abstract fun noteDao(): NoteDao
 
     companion object {
